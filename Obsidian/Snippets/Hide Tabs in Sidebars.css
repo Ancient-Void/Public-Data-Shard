@@ -1,0 +1,6 @@
+/* Hide tabs in right side bar*/
+/* Top most split */
+div.workspace-split.mod-horizontal.mod-right-split > div.workspace-tabs.mod-top.mod-top-right-space > div.workspace-tab-header-container 
+{
+        display:none;
+}

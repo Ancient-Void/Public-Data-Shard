@@ -1,0 +1,44 @@
+/* Shift left all headings in the gutter in order to make them more distinguishable from text bodies in Editing and Reading modes. */
+/* NOTE : `:not(.callout-content)` is used to exclude headings contained in callout boxes */
+.HyperMD, 
+:not(.callout-content) > h1,
+:not(.callout-content) > h2,
+:not(.callout-content) > h3,
+:not(.callout-content) > h4,
+:not(.callout-content) > h5,
+:not(.callout-content) > h6 {
+  position: relative;
+}
+h1, .HyperMD-header-1 {
+  left: -30px;
+}
+h2, .HyperMD-header-2 {
+  left: -15px;
+}
+h3, .HyperMD-header-3 {
+  left: 0px;
+}
+h4, .HyperMD-header-4 {
+  left: 15px;
+}
+h5, .HyperMD-header-5 {
+  left: 30px;
+}
+h6, .HyperMD-header-6 {
+  left: 45px;
+}
+
+/*
+This is used to center note considering shifted titles
+  exceptions carved out for dashboard2, and embeds within dashboard2
+*/
+div.markdown-preview-view:not(.dashboard),
+div.markdown-source-view div.cm-content { 
+  padding-left: 35px !important;
+  padding-right: 20px !important;
+}
+
+div.markdown-preview-view.dashboard span.internal-embed div.markdown-preview-view {
+  padding-left: 0px !important;
+  padding-right: 0px !important;
+}
