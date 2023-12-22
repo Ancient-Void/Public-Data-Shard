@@ -1,0 +1,20 @@
+/* Apply the cssclass to align text */
+.align-center {
+  display:    block;
+  text-align: center;
+}
+  
+.align-right {
+  display:    block;
+  text-align: right;
+}
+  
+.align-left {
+  display:    block;
+  text-align: left;
+}
+  
+.align-justify {
+  display:    block;
+  text-align: justify;
+}
