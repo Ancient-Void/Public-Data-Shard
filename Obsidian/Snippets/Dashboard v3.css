@@ -116,9 +116,9 @@ body {
 .dashboard div.markdown-preview-section > div > ul > li > ul > li > ul > li > div.list-bullet {
     display: none !important;
 }
-/* .dashboard div.markdown-preview-section > div > ul > li > ul > li > ul > li > ul > li > div.list-bullet {
+.dashboard div.markdown-preview-section > div > ul > li > ul > li > ul > li > ul > li > div.list-bullet {
     display: none !important;
-} */
+}
 
 /* Remove the indentation guide lines */
 .dashboard.markdown-rendered.show-indentation-guide li > ul::before,
