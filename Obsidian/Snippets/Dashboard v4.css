@@ -1,0 +1,172 @@
+/* Updated 2023-12-22 */
+
+/* setting variables */
+    body {
+        --embed-max-height: 48rem;
+    }
+    .dashboard {
+        padding-left: 25px !important;
+        padding-right: 25px !important;
+        padding-top: 20px !important;
+
+        font-family: Bahnschrift;
+        font-size: 12pt !important;
+
+        --file-line-width: 100%; /* Make page full width */
+    }
+
+
+/* Creating Columns */
+    /* Two main columns | large | small | */
+    .dashboard div > ul.has-list-bullet {
+        list-style: none;
+        display: flex;
+        column-gap: 2%;
+        flex-flow: row wrap;
+    }
+    /* Setting the growth of the first item to 2x all others */
+        .dashboard div > ul.has-list-bullet > li:nth-of-type(odd) {
+            flex: 3 1 30%;
+            min-width: 30rem;
+        }
+        .dashboard div > ul.has-list-bullet > li:nth-of-type(even) {
+            flex: 1 1 15%;
+            min-width: 21rem;
+            max-width: 450px;
+        }
+    /* Creating small columns (max 4, but only if super wide or Major column takes up whole page width)*/
+        .dashboard div > ul > li > ul > li > ul {
+            list-style: none;
+            display: flex;
+            column-gap: 2%;
+            flex-flow: row wrap;
+        }  
+        /* enabling small columns for dataview lists */
+        .dashboard div > ul > li > ul > li > span > div > ul.dataview {
+            list-style: none;
+            display: flex;
+            column-gap: 2%;
+            flex-flow: row wrap;
+            list-style-type: none !important;
+        } 
+        /* Setting minimum width and flex basis (minimum percentage of major column each minor column can take) */
+        .dashboard div > ul > li > ul > li > ul > li,
+            .dashboard div > ul > li > ul > li > span > div > ul.dataview > li {
+            flex: 1 1 23%;
+            min-width: 16.5rem;
+        }
+
+/* Re-aligning and formatting headings */
+    .dashboard h1 {
+        text-align: center !important; 
+        left: 0px; /* Re-align header to normal */
+        
+        padding-bottom: .1rem !important;
+        
+        font-family: Handlee;
+        font-size: 2rem !important;
+
+        text-shadow: .3rem .3rem .2rem black;
+    }
+    .dashboard div.markdown-preview-sizer > div > h1[data-heading = "`dice:[[Reminders]]`"] {
+        margin-top: -6rem;
+        margin-bottom: 1rem;
+    }
+    .dashboard h2 {
+        text-align: center !important; 
+        left: 0px; /* Re-align header to normal */
+
+        border-top-style: dotted !important;
+        border-width: 1px !important;
+        margin-bottom: -1rem !important;
+
+        font-family: Handlee;
+        font-size: 1.5rem !important;
+
+        text-shadow: .3rem .3rem .2rem black;
+    }
+    .dashboard h3 {
+        left: 0px; /* Re-align header to normal */
+
+        margin-bottom: -1rem !important;
+        font-family: Handlee;
+        font-size: 1.5rem !important;
+
+        text-shadow: .3rem .3rem .2rem black;
+    }
+    .dashboard h4,
+        .dashboard h5,
+        .dashboard h6 {
+        left: 0px; /* Re-align header to normal */
+
+        margin-top: 0rem !important;
+        margin-bottom: -.5rem !important;
+
+        font-family: Handlee;
+        font-size: 1.2rem !important;
+    }
+
+/* Adjusting list margins */
+    /* shrinking margins */
+    .dashboard div.markdown-preview-sizer > div > h1 > span > span > div > div > p {
+        margin-top: 0px;
+        margin-bottom: 0px;
+    }
+    /* Removing the Padding from list levels 1-3 & adding a little margin for level 4*/
+        .dashboard div > ul,
+            .dashboard div > ul > li > ul,
+            .dashboard div > ul > li > ul > li > ul {
+        padding-left: 0px !important;
+        }
+        .dashboard div > ul > li > ul > li > ul > li > ul {
+        margin-left: .5rem !important;
+        }
+    /* Dataview */
+        /* .dashboard ul.dataview {
+            row-gap: 0px !important;
+            margin-left: 0rem;
+            list-style-type: disc !important;
+        } */
+        .dashboard ul.dataview {
+            row-gap: 0px !important;
+            margin-left: -.17rem;
+            list-style-type: disc !important;
+        }
+
+/* Bullet Time */
+    /* Remove bullets and ability to collapse lists when bullet hidden for levels 1-3*/
+        .dashboard div.markdown-preview-section > div > ul > li > div.list-bullet,
+            .dashboard div.markdown-preview-section > div > ul > li > ul > li > div.list-bullet,
+            .dashboard div.markdown-preview-section > div > ul > li > ul > li > ul > li > div.list-bullet {
+            display: none !important;
+        }
+    /* Remove bullet from any level that contains a dataview query*/
+        .dashboard div.list-bullet:has(+ span) {
+            display: none !important;
+        }
+    /* Remove the ability to collapse lists */
+        .dashboard div.list-collapse-indicator {
+            display: none;
+        }
+    /* Remove the indentation guide lines */
+        .dashboard.markdown-rendered.show-indentation-guide li > ul::before,
+            .dashboard.markdown-rendered.show-indentation-guide li > ol::before {
+            display: none;
+        }
+
+/* Title at top of the document */
+/* Commented out due to conflict with Banner Plugin
+.markdown-reading-view .dashboard .inline-title {
+    
+    margin-top: 1.5rem;
+    margin-bottom: .75rem;
+    padding-right: 5rem;
+
+    font-family: handlee;
+    font-weight: bold;
+
+    font-size: 3rem !important;
+    letter-spacing: .5rem;
+    
+    text-align: right;   
+} */
